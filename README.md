@@ -27,3 +27,9 @@ npm run dev
 ```sh
 npm run build
 ```
+
+### I used this API for movies
+
+```sh
+https://developers.themoviedb.org/3/getting-started/introduction
+```
