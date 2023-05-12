@@ -2,6 +2,10 @@
 import Movie from '@/components/Movie.vue'
 import {useMovieStore} from '@/stores/MovieStore'
 
+const setTab = (id) => {
+	movieStore.setActiveTab(id)
+}
+
 const movieStore = useMovieStore()
 </script>
 
@@ -10,10 +14,16 @@ const movieStore = useMovieStore()
 		<img src="/logo.svg" alt="logo" class="header-logo">
 		<h2>My Favorite Movies</h2>
 		<div class="tabs">
-			<button :class="['btn', { btn_green: movieStore.activeTab === 1 }]">
+			<button
+				:class="['btn', { btn_green: movieStore.activeTab === 1 }]"
+				@click="setTab(1)"
+			>
 				Favorite
 			</button>
-			<button :class="['btn', { btn_green: movieStore.activeTab === 2 }]">
+			<button
+				:class="['btn', { btn_green: movieStore.activeTab === 2 }]"
+				@click="setTab(2)"
+			>
 				Search
 			</button>
 		</div>
